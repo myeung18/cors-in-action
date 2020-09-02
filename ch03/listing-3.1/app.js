@@ -15,3 +15,10 @@ serverapp.get('/api/posts', function(req, res) {
 serverapp.listen(SERVER_PORT, function() {
   console.log('Started server at http://127.0.0.1:' + SERVER_PORT);
 });
+
+var CLIENT_PORT = 1111;
+var clientapp = express();
+clientapp.use(express.static(__dirname));
+clientapp.listen(CLIENT_PORT, function() {
+    console.log('Started client at http://localhost:' + CLIENT_PORT);
+});
